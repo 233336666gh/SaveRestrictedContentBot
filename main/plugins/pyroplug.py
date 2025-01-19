@@ -146,19 +146,19 @@ async def get_msg(userbot, client, bot, sender, edit_id, msg_link, i):
             await client.edit_message_text(sender, edit_id, "Have you joined the channel?")
             return
         except ChannelBanned:
-            await client.edit_message_text(sender, edit_id, "Failed: The channel has been banned.")
+            print("Failed: The channel has been banned.")
             return
         except ChannelInvalid:
-            await client.edit_message_text(sender, edit_id, "Failed: The channel is invalid.")
+            print("Failed: The channel is invalid.")
             return
         except ChannelPrivate:
-            await client.edit_message_text(sender, edit_id, "Failed: The channel is private. Have you joined the channel?")
+            print("Failed: The channel is private. Have you joined the channel?")
             return
         except ChatIdInvalid:
-            await client.edit_message_text(sender, edit_id, "Failed: The chat ID is invalid.")
+            print("Failed: The chat ID is invalid.")
             return
         except ChatInvalid:
-            await client.edit_message_text(sender, edit_id, "Failed: The chat is invalid.")
+            print("Failed: The chat is invalid.")
             return
         except PeerIdInvalid:
             chat = msg_link.split("/")[-3]
